@@ -1,0 +1,92 @@
+What is elegance?
+Music is a writing process
+
+that fills the stage between composing and performing
+writing->reading
+with an artefact in the middle
+that is somehow considered a piece of music
+
+with two perspectives on time:
+prospective time (notated) /
+traversal of notation yields performance time (T)
+as a diaphragm model of composition.
+
+however there is always an intractable element(s) in a
+creative/compositional process / notation process...
+is there perhaps a way to make reading-writing less
+separatable (like a record needle)
+reading / looking at memory also writes or alters it
+
+a queuing system: like a DJ, listened to on headphones
+and then deciding when/how to shift into it...
+multi-cursor modifications...
+simple things for editing in SC
+change everything with the same name at once
+
+The dispute over the existence (or reality) of mathematical entities is an example of what philosophers call the Problem of Universals, something which goes back as far as Plato. This is the question as to whether abstract concepts have some sort of real existence in the world, or whether they exist only in our minds. Like most philosophical problems, it seems to be more a question about language than a question about the world, although there are certainly philophers who would disagree with me in this respect.
+
+Certainly numbers do not have a tangible existence in the world. They exist in our collective consciousness. And yet they are not arbitrary products of our imaginations in the way that fictional characters are.
+
+For instance, when a mathematician says that there exists a prime number which is the sum of two squares, his statement is not a product of his imagination. It is not a matter of opinion. The prime number 13, in fact, is the sum of 3 squared and 2 squared: 13 = 9 + 4. And when the Indian mathematician Ramanujan said to his fellow mathematician G.H. Hardy that 1729 is the smallest number that can be written as a sum of two cubes in two different ways, he was making a statement of fact:
+1729 = 10³ + 9³ = 12³ + 1³.
+
+The fact that no smaller number can be so written can be verified, with the help of a computer program or spreadsheet, by listing the values of  m³ + n³  for  m and n  between 1 and 12 and seeing that there are no duplications smaller than 1729 in the list. (One can also note that if  m³ + n³  is 1729, then one of these two numbers must be larger than 9 and, of course, no larger than 12. This leaves us with only a few possibilities to check.)
+
+"There exists" is one of the most common phrases in mathematical discourse, and whether one is talking about a prime number with a certain property or the solution to a differential equation, a statement about existence is a statement of fact, not a matter arbitrary choice or opinion.
+
+Zeno of Elea (c. 450 BCE) is credited with creating several famous paradoxes, and perhaps the best known is the paradox of the Tortoise and Achilles. (Achilles was the great Greek hero of Homer’s The Iliad.) It has inspired many writers and thinkers through the ages, notably Lewis Carroll (see Carroll’s Paradox) and Douglas Hofstadter, both of whom wrote expository dialogues involving the Tortoise and Achilles.
+
+The original goes something like this:
+
+    The Tortoise challenged Achilles to a race, claiming that he would win as long as Achilles gave him a small head start. Achilles laughed at this, for of course he was a mighty warrior and swift of foot, whereas the Tortoise was heavy and slow.
+
+    “How big a head start do you need?” he asked the Tortoise with a smile.
+
+    “Ten meters,” the latter replied.
+
+    Achilles laughed louder than ever. “You will surely lose, my friend, in that case,” he told the Tortoise, “but let us race, if you wish it.”
+
+    “On the contrary,” said the Tortoise, “I will win, and I can prove it to you by a simple argument.”
+
+    “Go on then,” Achilles replied, with less confidence than he felt before. He knew he was the superior athlete, but he also knew the Tortoise had the sharper wits, and he had lost many a bewildering argument with him before this.
+
+    “Suppose,” began the Tortoise, “that you give me a 10-meter head start. Would you say that you could cover that 10 meters between us very quickly?”
+
+    “Very quickly,” Achilles affirmed.
+
+    “And in that time, how far should I have gone, do you think?”
+
+    “Perhaps a meter—no more,” said Achilles after a moment’s thought.
+
+    “Very well,” replied the Tortoise, “so now there is a meter between us. And you would catch up that distance very quickly?”
+
+    “Very quickly indeed!”
+
+    “And yet, in that time I shall have gone a little way farther, so that now you must catch that distance up, yes?”
+
+    “Ye-es,” said Achilles slowly.
+
+    “And while you are doing so, I shall have gone a little way farther, so that you must then catch up the new distance,” the Tortoise continued smoothly.
+
+    Achilles said nothing.
+
+    “And so you see, in each moment you must be catching up the distance between us, and yet I—at the same time—will be adding a new distance, however small, for you to catch up again.”
+
+    “Indeed, it must be so,” said Achilles wearily.
+
+    “And so you can never catch up,” the Tortoise concluded sympathetically.
+
+    “You are right, as always,” said Achilles sadly—and conceded the race.
+
+
+
+		In music, a note is the pitch and duration of a sound, and also its representation in musical notation (♪, ♩). A note can also represent a pitch class. Notes are the building blocks of much written music: discretizations of musical phenomena that facilitate performance, comprehension, and analysis.[1]
+
+		The term note can be used in both generic and specific senses: one might say either "the piece 'Happy Birthday to You' begins with two notes having the same pitch", or "the piece begins with two repetitions of the same note". In the former case, one uses note to refer to a specific musical event; in the latter, one uses the term to refer to a class of events sharing the same pitch. (See also: Key signature names and translations.)
+		The note A or La
+		Names of some notes without accidentals
+
+		Two notes with fundamental frequencies in a ratio equal to any integer power of two (e.g., half, twice, or four times) are perceived as very similar. Because of that, all notes with these kinds of relations can be grouped under the same pitch class.
+
+
+		a written word is a series of letters that represent its sound instead of something more obvious, like a picture of the thing. Why should "bird" be the word for bird instead of a picture of a bird? Even worse, there are 40 sounds in English but only 26 letters, and a bunch of those letters are redundant, like "c" sounds like both "s" and "k"

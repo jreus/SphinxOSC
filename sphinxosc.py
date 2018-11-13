@@ -1,12 +1,21 @@
 #!/usr/bin/env python
 
+#   Jonathan Reus (c) 2018 GPLv3
+#	Speech to text OSC utility
 #
-#	Audio Speech to Text Analysis
-#	10 seconds
-#
-#	Modified code, originally written by Sophie Li, 2016
+#	Inspired by a PocketSphinx Python class written by Sophie Li, 2016
 #	http://blog.justsophie.com/python-speech-to-text-with-pocketsphinx/
 #
+#     This program is free software: you can redistribute it and/or modify
+#     it under the terms of the GNU General Public License as published by
+#     the Free Software Foundation, either version 3 of the License, or
+#     (at your option) any later version.
+#
+#     This program is distributed in the hope that it will be useful,
+#     but WITHOUT ANY WARRANTY; without even the implied warranty of
+#     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#     GNU General Public License https://www.gnu.org/licenses/ for more details.
+
 
 import sounddevice as sd
 import numpy as np
