@@ -26,6 +26,7 @@ import numpy as np
 import wave
 import audioop
 import os
+import time
 from math import ceil
 from collections import deque
 
@@ -34,6 +35,7 @@ from pocketsphinx.pocketsphinx import Decoder
 
 
 from pythonosc import osc_message_builder
+from pythonosc import osc_bundle_builder
 from pythonosc import udp_client
 
 class SphinxOSC(object):
@@ -96,6 +98,9 @@ class SphinxOSC(object):
         lost_data = False
 
         print("Listening ...")
+        starttime = time.time()
+        osc_client.send_message("/sphinxOSC/sync", [time.time() - starttime, self.RECORD_PREVIOUS])
+
         while GO < (runtime * ratio):
             # get some data as a bytes-like object from the mic
             # sd.read returns a numpy.ndarray with one column per channel (frames, channels)
@@ -109,7 +114,7 @@ class SphinxOSC(object):
             if thesum > 0: # more than one block has sqrt(avg) over threshhold, so we haven't hit silence yet
                 if STARTED == False:
                     print("Starting recording of utterance ...")
-                    osc_client.send_message("/sphinxOSX/utterancestart", [1])
+                    osc_client.send_message("/sphinxOSC/utterance", [time.time()-starttime, 1])
                     STARTED = True
                 audio2send.append(cur_data[:,0]) # append current data block to what will be sent for analysis
             elif STARTED:
@@ -132,9 +137,24 @@ class SphinxOSC(object):
                 #decoder.process_cep(buffer, False, False) # process cepstrum data
                 decoder.end_utt()
 
-                print(decoder.hyp().hypstr,'\n')
+                utterance = [time.time()-starttime, 0, decoder.hyp().hypstr];
+                print(utterance[2],'\n')
+
+                #for seg in decoder.seg():
+                #    utterance.append([seg.word, decoder.lookup_word(seg.word), seg.ascore, seg.lscore, seg.prob, seg.start_frame, seg.end_frame, seg.lback])
+
                 for seg in decoder.seg():
-                    osc_client.send_message("/sphinxOSC/word", [seg.word, decoder.lookup_word(seg.word), seg.ascore, seg.lscore, seg.prob, seg.start_frame, seg.end_frame, seg.lback])
+                    utterance.append(seg.word)
+                    utterance.append(decoder.lookup_word(seg.word))
+                    utterance.append(seg.ascore)
+                    utterance.append(seg.lscore)
+                    utterance.append(seg.prob)
+                    utterance.append(seg.start_frame)
+                    utterance.append(seg.end_frame)
+                    utterance.append(seg.lback)
+
+
+                osc_client.send_message("/sphinxOSC/utterance", utterance)
 
                 # Get ready for the next audio block.
                 STARTED = False
@@ -187,11 +207,11 @@ if __name__ == '__main__':
     argp.add_argument('-SLIMIT', default=0.3, type=float, help="silence period separating utterances (seconds)")
     argp.add_argument('-RPREV', default=0.2, type=float, help="amount of audio included before detecting an utterance, avoids cutting the beginnings of words (seconds)") # run for dur seconds
     argp.add_argument('-STHRESH', default=500, type=int, help="rms silence threshhold (integer)") # run for dur seconds
-    argp.add_argument('-a', default="127.0.0.1", help="OSC send address")
-    argp.add_argument('-p', default=57120, type=int, help="OSC send port")
+    argp.add_argument('--ip', default="127.0.0.1", help="OSC send address")
+    argp.add_argument('--port', default=57120, type=int, help="OSC send port")
     argp.add_argument('--devices', action='store_true', help="query available audio devices and show default device")
-    argp.add_argument('-indev', type=int, help="input audio device, use --devices to see available devices")
-    argp.add_argument('-outdev', type=int, help="output audio device, use --devices to see available devices")
+    argp.add_argument('--indev', type=int, help="input audio device, use --devices to see available devices")
+    argp.add_argument('--outdev', type=int, help="output audio device, use --devices to see available devices")
 
 
     args = argp.parse_args()
@@ -210,8 +230,8 @@ if __name__ == '__main__':
         s.SILENCE_LIMIT = args.SLIMIT
         s.SILENCE_THRESH = args.STHRESH
         s.RECORD_PREVIOUS = args.RPREV
-        s.SEND_ADDR = args.a
-        s.SEND_PORT = args.p
+        s.SEND_ADDR = args.ip
+        s.SEND_PORT = args.port
         s.run(args.T, args.indev, output_device=args.outdev)
         decoderfun(s.DECODER)
 
